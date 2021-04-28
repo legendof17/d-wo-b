@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import Database from './components/database';
 
 function App() {
   return (
@@ -37,15 +38,4 @@ function Home() {
   )
 }
 
-function Database() {
-  var tt = btoa('Hello')
-  var uu = atob(tt)
-  return (
-  <div>
-    <h1>This is Database</h1>
-    {tt}<br/>
-    {uu}
-  </div>
-  )
-}
 export default App;
