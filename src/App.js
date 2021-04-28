@@ -3,10 +3,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   Redirect
 } from 'react-router-dom';
+import Home from './components/home'
 import Database from './components/database';
+import WrongPlace from './components/wrongplace';
 
 function App() {
   return (
@@ -16,24 +17,13 @@ function App() {
           <Switch>
             <Route path="/database" exact component={Database} />
             <Route path="/" exact component={Home} />
-            <Redirect path='*' to='/' />
+            <Route path="/wrongplace" exact component={WrongPlace} />
+            <Redirect path='*' to='/wrongplace' />
           </Switch>
         </header>
       </div>
     </Router>
   );
-}
-
-function Home() {
-  return (
-    <div>
-      <h1>{'D-WO=>B'}</h1>
-      <p>It's a project about Database-without-Backend</p>
-      <Link to="/database">
-        <button>Start</button>
-      </Link>
-    </div>
-  )
 }
 
 export default App;
