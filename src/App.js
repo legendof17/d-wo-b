@@ -3,22 +3,20 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from 'react-router-dom';
 import Database from './components/database';
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
         <header className="App-header">
           <Switch>
-            <Route path="/database">
-              <Database />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
+            <Route path="/database" exact component={Database} />
+            <Route path="/" exact component={Home} />
+            <Redirect path='*' to='/' />
           </Switch>
         </header>
       </div>
