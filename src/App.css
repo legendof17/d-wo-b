@@ -24,6 +24,20 @@
   color: white;
 }
 
+button {
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 30px;
+  font-size: calc(10px + 2vmin);
+  border-radius: 18px;
+  border-right: 100px;
+  cursor: pointer;
+}
+button:focus {
+  outline: 0;
+}
+
 .App-link {
   color: #61dafb;
 }
